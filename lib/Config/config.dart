@@ -16,6 +16,7 @@ class EcommerceApp
    static String collectionOrders = "orders";
    static String userCartList = 'userCart';
    static String subCollectionAddress = 'userAddress';
+   static String subCollectionPayment = 'userPayment';
 
    static final String userName = 'name';
    static final String userEmail = 'email';
@@ -24,10 +25,12 @@ class EcommerceApp
    static final String userAvatarUrl = 'url';
 
    static final String addressID = 'addressID';
+   static final String phoneNo = 'phoneNo';
    static final String totalAmount = 'totalAmount';
    static final String productID = 'productIDs';
    static final String paymentDetails ='paymentDetails';
    static final String orderTime ='orderTime';
    static final String isSuccess ='isSuccess';
+   static final String orderID = 'orderID';
 
 }

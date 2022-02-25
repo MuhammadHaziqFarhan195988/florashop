@@ -1,7 +1,7 @@
 
-import 'package:e_shop/Models/item.dart';
-import 'package:e_shop/Store/storehome.dart';
-import 'package:e_shop/Widgets/myDrawer.dart';
+import 'package:florashop/Models/item.dart';
+import 'package:florashop/Store/storehome.dart';
+import 'package:florashop/Widgets/myDrawer.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -50,7 +50,7 @@ class _SearchProductState extends State<SearchProduct> {
       height: 80.0,
         decoration: new BoxDecoration(
             gradient: new LinearGradient(
-              colors: [Colors.pink,Colors.lightGreenAccent],
+              colors: [Colors.lightGreen[900],Colors.lightGreenAccent],
               begin: const FractionalOffset(0.0, 0.0),
               end: const FractionalOffset(1.0, 0.0),
               stops: [0.0 , 1.0],
@@ -75,7 +75,7 @@ class _SearchProductState extends State<SearchProduct> {
                   onChanged: (value){
                     startSearching(value);
                   },
-                  decoration: InputDecoration.collapsed(hintText: "search here..."),
+                  decoration: InputDecoration.collapsed(hintText: "search plants here using tags..."),
                 ),
               ),)
             ],

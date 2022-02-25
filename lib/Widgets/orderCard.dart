@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:e_shop/Orders/OrderDetailsPage.dart';
-import 'package:e_shop/Models/item.dart';
+import 'package:florashop/Orders/OrderDetailsPage.dart';
+import 'package:florashop/Models/item.dart';
 import 'package:flutter/material.dart';
 import '../Store/storehome.dart';
 
@@ -22,13 +22,14 @@ class OrderCard extends StatelessWidget {
         if(counter ==0){
           counter = counter +1;
           route = MaterialPageRoute(builder: (c) => OrderDetails(orderID: orderID));
+
         }
         Navigator.push(context, route);
       },
       child: Container(
         decoration: new BoxDecoration(
             gradient: new LinearGradient(
-              colors: [Colors.pink,Colors.lightGreenAccent],
+              colors: [Colors.lightGreen[900],Colors.lightGreenAccent],
               begin: const FractionalOffset(0.0, 0.0),
               end: const FractionalOffset(1.0, 0.0),
               stops: [0.0 , 1.0],

@@ -1,12 +1,12 @@
 import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:e_shop/Counters/ItemQuantity.dart';
+import 'package:florashop/Counters/ItemQuantity.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'Authentication/authenication.dart';
-import 'package:e_shop/Config/config.dart';
+import 'package:florashop/Config/config.dart';
 import 'Counters/cartitemcounter.dart';
 import 'Counters/changeAddresss.dart';
 import 'Counters/totalMoney.dart';
@@ -21,7 +21,7 @@ Future<void> main() async
 
   runApp(MyApp());
 }
-
+// [√] Flutter (Channel stable, 2.0.5, on Microsoft Windows [Version 10.0.19043.1526], locale en-US)
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -77,7 +77,7 @@ class _SplashScreenState extends State<SplashScreen>
       child: Container(
         decoration: new BoxDecoration(
           gradient: new LinearGradient(
-              colors: [Colors.pink, Colors.lightGreenAccent],
+              colors: [Colors.lightGreen[900], Colors.lightGreenAccent],
             begin: const FractionalOffset(0.0, 0.0),
             end: const FractionalOffset(1.0, 0.0),
             stops: [0.0 , 1.0],

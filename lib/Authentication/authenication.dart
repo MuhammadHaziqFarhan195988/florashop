@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'login.dart';
 import 'register.dart';
-import 'package:e_shop/Config/config.dart';
+import 'package:florashop/Config/config.dart';
 
 
 class AuthenticScreen extends StatefulWidget {
@@ -10,7 +10,15 @@ class AuthenticScreen extends StatefulWidget {
 }
 
 class _AuthenticScreenState extends State<AuthenticScreen> {
-
+// haziqf5@gmail.com haziq456
+//delivery assumed to have standard delivery cost
+//limit to peninsula malaysia due to special plant care akta kawalan penyakit
+//also more expensive
+//payment is only on cash on delivery method
+//in future plans, i would include paywave method used by owner of the software
+//need to include bank account for transfer money to seller
+//require policy for refund (condition of plant) within 3 days of arrival
+//picture of a delivered plant
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -20,7 +28,7 @@ class _AuthenticScreenState extends State<AuthenticScreen> {
           flexibleSpace: Container(
             decoration: new BoxDecoration(
               gradient: new LinearGradient(
-                  colors: [Colors.pink,Colors.lightGreenAccent],
+                  colors: [Colors.lightGreen[900],Colors.lightGreenAccent],
                 begin: const FractionalOffset(0.0, 0.0),
                 end: const FractionalOffset(1.0, 0.0),
                 stops: [0.0 , 1.0],
@@ -51,7 +59,7 @@ class _AuthenticScreenState extends State<AuthenticScreen> {
         body: Container(
           decoration: BoxDecoration(
               gradient: new LinearGradient(
-                colors: [Colors.pink,Colors.lightGreenAccent],
+                colors: [Colors.lightGreen[900],Colors.lightGreenAccent],
                 begin: Alignment.topRight,
                 end: Alignment.bottomLeft,
 

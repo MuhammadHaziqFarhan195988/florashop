@@ -1,12 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:e_shop/Store/cart.dart';
-import 'package:e_shop/Store/product_page.dart';
-import 'package:e_shop/Counters/cartitemcounter.dart';
+import 'package:florashop/Store/cart.dart';
+import 'package:florashop/Store/product_page.dart';
+import 'package:florashop/Counters/cartitemcounter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provider/provider.dart';
-import 'package:e_shop/Config/config.dart';
+import 'package:florashop/Config/config.dart';
 import '../Widgets/loadingWidget.dart';
 import '../Widgets/myDrawer.dart';
 import '../Widgets/searchBox.dart';
@@ -29,7 +29,7 @@ class _StoreHomeState extends State<StoreHome> {
           flexibleSpace: Container(
             decoration: new BoxDecoration(
                 gradient: new LinearGradient(
-                  colors: [Colors.pink,Colors.lightGreenAccent],
+                  colors: [Colors.lightGreen[900],Colors.lightGreenAccent],
                   begin: const FractionalOffset(0.0, 0.0),
                   end: const FractionalOffset(1.0, 0.0),
                   stops: [0.0 , 1.0],
@@ -248,7 +248,7 @@ Widget sourceInfo(ItemModel model, BuildContext context,
                 ),
                 Divider(
                   height: 5.0,
-                  color: Colors.pink,
+                  color: Colors.lightGreen[900],
                 ),
               ],
           ))

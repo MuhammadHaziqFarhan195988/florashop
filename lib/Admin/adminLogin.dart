@@ -1,9 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:e_shop/Admin/uploadItems.dart';
-import 'package:e_shop/Authentication/authenication.dart';
-import 'package:e_shop/Widgets/customTextField.dart';
-import 'package:e_shop/DialogBox/errorDialog.dart';
+import 'package:florashop/Admin/uploadItems.dart';
+import 'package:florashop/Authentication/authenication.dart';
+import 'package:florashop/Widgets/customTextField.dart';
+import 'package:florashop/DialogBox/errorDialog.dart';
 import 'package:flutter/material.dart';
+
+import 'adminShiftOrders.dart';
 
 
 
@@ -16,7 +18,7 @@ class AdminSignInPage extends StatelessWidget {
         flexibleSpace: Container(
           decoration: new BoxDecoration(
               gradient: new LinearGradient(
-                colors: [Colors.pink,Colors.lightGreenAccent],
+                colors: [Colors.lightGreen[900],Colors.lightGreenAccent],
                 begin: const FractionalOffset(0.0, 0.0),
                 end: const FractionalOffset(1.0, 0.0),
                 stops: [0.0 , 1.0],
@@ -56,7 +58,7 @@ class _AdminSignInScreenState extends State<AdminSignInScreen>
       child: Container(
         decoration: new BoxDecoration(
             gradient: new LinearGradient(
-              colors: [Colors.pink,Colors.lightGreenAccent],
+              colors: [Colors.lightGreen[900],Colors.lightGreenAccent],
               begin: const FractionalOffset(0.0, 0.0),
               end: const FractionalOffset(1.0, 0.0),
               stops: [0.0 , 1.0],
@@ -100,7 +102,7 @@ class _AdminSignInScreenState extends State<AdminSignInScreen>
                     return ErrorAlertDialog(message: "Please fill in the white box",);
                   });
             },
-              color: Colors.pink,
+              color: Colors.blue,
               child: Text("Sign in", style: TextStyle(color: Colors.white),
               ),
             ),
@@ -145,7 +147,7 @@ class _AdminSignInScreenState extends State<AdminSignInScreen>
             _adminIDTextEditingController.text = "";
             _passwordTextEditingController.text = "";
           });
-            Route route = MaterialPageRoute(builder: (c) => UploadPage());
+            Route route = MaterialPageRoute(builder: (c) => AdminShiftOrders());
             Navigator.pushReplacement(context, route);
 
           }

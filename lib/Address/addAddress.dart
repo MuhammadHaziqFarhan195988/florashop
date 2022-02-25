@@ -1,8 +1,7 @@
-import 'package:e_shop/Config/config.dart';
-import 'package:e_shop/Store/storehome.dart';
-import 'package:e_shop/Widgets/customAppBar.dart';
-import 'package:e_shop/Models/address.dart';
-import 'package:e_shop/Widgets/myDrawer.dart';
+import 'package:florashop/Config/config.dart';
+import 'package:florashop/Store/storehome.dart';
+import 'package:florashop/Models/address.dart';
+import 'package:florashop/Widgets/myDrawer.dart';
 import 'package:flutter/material.dart';
 
 class AddAddress extends StatelessWidget {
@@ -26,7 +25,7 @@ class AddAddress extends StatelessWidget {
             flexibleSpace: Container(
               decoration: new BoxDecoration(
                   gradient: new LinearGradient(
-                    colors: [Colors.pink,Colors.lightGreenAccent],
+                    colors: [Colors.lightGreen[900],Colors.lightGreenAccent],
                     begin: const FractionalOffset(0.0, 0.0),
                     end: const FractionalOffset(1.0, 0.0),
                     stops: [0.0 , 1.0],

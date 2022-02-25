@@ -1,11 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:e_shop/Admin/adminOrderCard.dart';
-import 'package:e_shop/Config/config.dart';
-import 'package:e_shop/Store/storehome.dart';
+import 'package:florashop/Admin/adminOrderCard.dart';
+import 'package:florashop/Config/config.dart';
+import 'package:florashop/Store/storehome.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../Widgets/loadingWidget.dart';
 import '../Widgets/orderCard.dart';
+import '../main.dart';
 
 class AdminShiftOrders extends StatefulWidget {
   @override
@@ -23,7 +24,7 @@ class _MyOrdersState extends State<AdminShiftOrders> {
           flexibleSpace: Container(
             decoration: new BoxDecoration(
                 gradient: new LinearGradient(
-                  colors: [Colors.pink,Colors.lightGreenAccent],
+                  colors: [Colors.lightGreen[900],Colors.lightGreenAccent],
                   begin: const FractionalOffset(0.0, 0.0),
                   end: const FractionalOffset(1.0, 0.0),
                   stops: [0.0 , 1.0],
@@ -32,10 +33,10 @@ class _MyOrdersState extends State<AdminShiftOrders> {
             ),
           ),
           centerTitle: true,
-          title: Text("my Sales", style: TextStyle(color: Colors.white),),
+          title: Text("Ads Request", style: TextStyle(color: Colors.white),),
           actions: [
             IconButton(icon: Icon(Icons.arrow_drop_down_circle),color: Colors.white, onPressed: (){
-              Route route = MaterialPageRoute(builder: (c) => StoreHome());
+              Route route = MaterialPageRoute(builder: (c) => SplashScreen());
               Navigator.pushReplacement(context, route);
             },),
           ],

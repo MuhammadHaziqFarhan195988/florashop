@@ -1,15 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:e_shop/Config/config.dart';
-import 'package:e_shop/Address/address.dart';
-import 'package:e_shop/Widgets/customAppBar.dart';
-import 'package:e_shop/Widgets/loadingWidget.dart';
-import 'package:e_shop/Models/item.dart';
-import 'package:e_shop/Counters/cartitemcounter.dart';
-import 'package:e_shop/Counters/totalMoney.dart';
-import 'package:e_shop/Widgets/myDrawer.dart';
+import 'package:florashop/Config/config.dart';
+import 'package:florashop/Address/address.dart';
+import 'package:florashop/Widgets/customAppBar.dart';
+import 'package:florashop/Widgets/loadingWidget.dart';
+import 'package:florashop/Models/item.dart';
+import 'package:florashop/Counters/cartitemcounter.dart';
+import 'package:florashop/Counters/totalMoney.dart';
+import 'package:florashop/Widgets/myDrawer.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:e_shop/Store/storehome.dart';
+import 'package:florashop/Store/storehome.dart';
 import 'package:provider/provider.dart';
 import '../main.dart';
 

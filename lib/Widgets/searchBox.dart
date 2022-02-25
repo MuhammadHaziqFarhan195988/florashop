@@ -19,7 +19,7 @@ class SearchBoxDelegate extends SliverPersistentHeaderDelegate {
         child: Container(
           decoration: new BoxDecoration(
               gradient: new LinearGradient(
-                colors: [Colors.pink,Colors.lightGreenAccent],
+                colors: [Colors.lightGreen[900],Colors.lightGreenAccent],
                 begin: const FractionalOffset(0.0, 0.0),
                 end: const FractionalOffset(1.0, 0.0),
                 stops: [0.0 , 1.0],
@@ -48,7 +48,7 @@ class SearchBoxDelegate extends SliverPersistentHeaderDelegate {
                   ),
                   ),
                   Padding(padding: EdgeInsets.only(left: 8.0),
-                    child: Text("search here"),
+                    child: Text("search here using tags"),
                   )
                 ],
               ),

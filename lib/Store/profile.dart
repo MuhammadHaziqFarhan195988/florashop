@@ -1,10 +1,10 @@
 import 'dart:io';
-import 'package:e_shop/Config/config.dart';
-import 'package:e_shop/DialogBox/errorDialog.dart';
-import 'package:e_shop/Store/storehome.dart';
-import 'package:e_shop/Widgets/customAppBar.dart';
-import 'package:e_shop/Models/address.dart';
-import 'package:e_shop/Widgets/myDrawer.dart';
+import 'package:florashop/Config/config.dart';
+import 'package:florashop/DialogBox/errorDialog.dart';
+import 'package:florashop/Store/storehome.dart';
+import 'package:florashop/Widgets/customAppBar.dart';
+import 'package:florashop/Models/address.dart';
+import 'package:florashop/Widgets/myDrawer.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -88,8 +88,11 @@ class profile extends StatelessWidget {
 
             Route route = MaterialPageRoute(builder: (c) => StoreHome());
             Navigator.pushReplacement(context, route);
+
+
           }
-        }, label: Text("Done"),
+
+             }, label: Text("Done"),
           backgroundColor: Colors.pink,
           icon: Icon(Icons.check),),
         body: SingleChildScrollView(

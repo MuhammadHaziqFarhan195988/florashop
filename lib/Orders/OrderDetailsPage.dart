@@ -1,17 +1,20 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:e_shop/Address/address.dart';
-import 'package:e_shop/Config/config.dart';
-import 'package:e_shop/Store/storehome.dart';
-import 'package:e_shop/Widgets/loadingWidget.dart';
-import 'package:e_shop/Widgets/orderCard.dart';
-import 'package:e_shop/Models/address.dart';
-import 'package:e_shop/main.dart';
+import 'package:florashop/Address/address.dart';
+import 'package:florashop/Config/config.dart';
+import 'package:florashop/Store/profile.dart';
+import 'package:florashop/Store/storehome.dart';
+import 'package:florashop/Widgets/loadingWidget.dart';
+import 'package:florashop/Widgets/orderCard.dart';
+import 'package:florashop/Models/address.dart';
+import 'package:florashop/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:intl/intl.dart';
+import 'package:florashop/Store/delivery_timeline.dart';
 
 String getOrderId="";
+
 class OrderDetails extends StatelessWidget {
 
   final String orderID;
@@ -71,7 +74,7 @@ class OrderDetails extends StatelessWidget {
                         FutureBuilder<DocumentSnapshot>(future: EcommerceApp.firestore.collection(EcommerceApp.collectionUser).document(EcommerceApp.sharedPreferences.getString(EcommerceApp.userUID))
                             .collection(EcommerceApp.subCollectionAddress).document(dataMap[EcommerceApp.addressID]).get(),
                           builder: (c, snap){
-                          return snap.hasData ? ShippingDetails(model: AddressModel.fromJson(snap.data.data),) : Center(
+                          return snap.hasData ? ShippingDetails(model: AddressModel.fromJson(snap.data.data),orderID: orderID,) : Center(
                             child: circularProgress(),
                           );
                           },
@@ -108,7 +111,7 @@ class StatusBanner extends StatelessWidget {
     return Container(
       decoration: new BoxDecoration(
           gradient: new LinearGradient(
-            colors: [Colors.pink,Colors.lightGreenAccent],
+            colors: [Colors.lightGreen[900],Colors.lightGreenAccent],
             begin: const FractionalOffset(0.0, 0.0),
             end: const FractionalOffset(1.0, 0.0),
             stops: [0.0 , 1.0],
@@ -121,7 +124,8 @@ class StatusBanner extends StatelessWidget {
         children: [
           GestureDetector(
             onTap: (){
-              SystemNavigator.pop();
+              Route route = MaterialPageRoute(builder: (c) => StoreHome());
+              Navigator.pushReplacement(context, route);
             },
             child: Container(
               child: Icon(
@@ -160,8 +164,8 @@ class StatusBanner extends StatelessWidget {
 class ShippingDetails extends StatelessWidget {
 
   final AddressModel model;
-
-  ShippingDetails({Key key, this.model}) : super(key: key);
+  final String orderID;
+  ShippingDetails({Key key, this.model,this.orderID}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -228,31 +232,93 @@ class ShippingDetails extends StatelessWidget {
 
         Padding(
           padding: EdgeInsets.all(10.0),
-          child: Center(
-            child: InkWell(
-              onTap: (){
-                confirmedUserOrderReceived(context, getOrderId);
-              },
-              child: Container(
-                decoration: new BoxDecoration(
-                    gradient: new LinearGradient(
-                      colors: [Colors.pink,Colors.lightGreenAccent],
-                      begin: const FractionalOffset(0.0, 0.0),
-                      end: const FractionalOffset(1.0, 0.0),
-                      stops: [0.0 , 1.0],
-                      tileMode: TileMode.clamp,
-                    )
-                ),
-                width: MediaQuery.of(context).size.width - 40.0,
-                height: 50.0,
-                child: Center(
-                  child: Text("Confirmed", style: TextStyle(color: Colors.white, fontSize: 15.0),),
-              ),),
+          child: new Column (
+          children: [
+            new Center(
+              child: InkWell(
+                onTap: (){
+                  confirmedUserOrderReceived(context, getOrderId);
+                },
+                child: Container(
+                  decoration: new BoxDecoration(
+                      gradient: new LinearGradient(
+                        colors: [Colors.green,Colors.green],
+                        begin: const FractionalOffset(0.0, 0.0),
+                        end: const FractionalOffset(1.0, 0.0),
+                        stops: [0.0 , 1.0],
+                        tileMode: TileMode.clamp,
+                      )
+                  ),
+                  width: MediaQuery.of(context).size.width - 40.0,
+                  height: 50.0,
+                  child: Center(
+                    child: Text("Confirmed", style: TextStyle(color: Colors.white, fontSize: 15.0),),
+                ),),
+              ),
+
             ),
-          ),
+            Divider(
+              height: 5.0,
+              color: Colors.white,
+            ),
+            new Center(
+              child: InkWell(
+                onTap: (){
+                  Route route = MaterialPageRoute(builder: (c) => ShowcaseDeliveryTimeline(orderID: orderID));
+                  Navigator.pushReplacement(context, route);
+                },
+                child: Container(
+                  decoration: new BoxDecoration(
+                      gradient: new LinearGradient(
+                        colors: [Colors.blue,Colors.blue],
+                        begin: const FractionalOffset(0.0, 0.0),
+                        end: const FractionalOffset(1.0, 0.0),
+                        stops: [0.0 , 1.0],
+                        tileMode: TileMode.clamp,
+                      )
+                  ),
+                  width: MediaQuery.of(context).size.width - 40.0,
+                  height: 50.0,
+                  child: Center(
+                    child: Text("Your package progress", style: TextStyle(color: Colors.white, fontSize: 15.0),),
+                  ),),
+              ),
+
+
+            ),
+            Divider(
+              height: 5.0,
+              color: Colors.white,
+            ),
+            new Center(
+              child: InkWell(
+                onTap: (){
+                  Route route = MaterialPageRoute(builder: (c) => profile());
+                  Navigator.pushReplacement(context, route);
+                },
+                child: Container(
+                  decoration: new BoxDecoration(
+                      gradient: new LinearGradient(
+                        colors: [Colors.red,Colors.red],
+                        begin: const FractionalOffset(0.0, 0.0),
+                        end: const FractionalOffset(1.0, 0.0),
+                        stops: [0.0 , 1.0],
+                        tileMode: TileMode.clamp,
+                      )
+                  ),
+                  width: MediaQuery.of(context).size.width - 40.0,
+                  height: 50.0,
+                  child: Center(
+                    child: Text("Refund", style: TextStyle(color: Colors.white, fontSize: 15.0),),
+                  ),),
+              ),
+
+            ),
+          ],
         ),
-      ],
-    );
+        )],
+          );
+
   }
 
   confirmedUserOrderReceived(BuildContext context,String mOrderId){

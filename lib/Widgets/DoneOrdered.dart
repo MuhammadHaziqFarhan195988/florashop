@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:e_shop/Widgets/receipt.dart';
-import 'package:e_shop/Models/item.dart';
+import 'package:florashop/Widgets/receipt.dart';
+import 'package:florashop/Models/item.dart';
 import 'package:flutter/material.dart';
 import '../Store/storehome.dart';
 

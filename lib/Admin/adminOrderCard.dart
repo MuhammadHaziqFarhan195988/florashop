@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:e_shop/Admin/adminOrderDetails.dart';
-import 'package:e_shop/Models/item.dart';
-import 'package:e_shop/Widgets/orderCard.dart';
+import 'package:florashop/Admin/adminOrderDetails.dart';
+import 'package:florashop/Models/item.dart';
+import 'package:florashop/Widgets/orderCard.dart';
 import 'package:flutter/material.dart';
 
 import '../Store/storehome.dart';
@@ -33,7 +33,7 @@ class AdminOrderCard extends StatelessWidget
       child: Container(
         decoration: new BoxDecoration(
             gradient: new LinearGradient(
-              colors: [Colors.pink,Colors.lightGreenAccent],
+              colors: [Colors.lightGreen[900],Colors.lightGreenAccent],
               begin: const FractionalOffset(0.0, 0.0),
               end: const FractionalOffset(1.0, 0.0),
               stops: [0.0 , 1.0],

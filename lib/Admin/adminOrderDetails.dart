@@ -1,10 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:e_shop/Address/address.dart';
-import 'package:e_shop/Admin/uploadItems.dart';
-import 'package:e_shop/Config/config.dart';
-import 'package:e_shop/Widgets/loadingWidget.dart';
-import 'package:e_shop/Widgets/orderCard.dart';
-import 'package:e_shop/Models/address.dart';
+import 'package:florashop/Address/address.dart';
+import 'package:florashop/Admin/uploadItems.dart';
+import 'package:florashop/Config/config.dart';
+import 'package:florashop/Widgets/loadingWidget.dart';
+import 'package:florashop/Widgets/orderCard.dart';
+import 'package:florashop/Models/address.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -108,7 +108,7 @@ class AdminStatusBanner extends StatelessWidget {
     return Container(
       decoration: new BoxDecoration(
           gradient: new LinearGradient(
-            colors: [Colors.pink,Colors.lightGreenAccent],
+            colors: [Colors.lightGreen[900],Colors.lightGreenAccent],
             begin: const FractionalOffset(0.0, 0.0),
             end: const FractionalOffset(1.0, 0.0),
             stops: [0.0 , 1.0],
@@ -236,7 +236,7 @@ class AdminShippingDetails extends StatelessWidget {
               child: Container(
                 decoration: new BoxDecoration(
                     gradient: new LinearGradient(
-                      colors: [Colors.pink,Colors.lightGreenAccent],
+                      colors: [Colors.green,Colors.green],
                       begin: const FractionalOffset(0.0, 0.0),
                       end: const FractionalOffset(1.0, 0.0),
                       stops: [0.0 , 1.0],
@@ -246,7 +246,7 @@ class AdminShippingDetails extends StatelessWidget {
                 width: MediaQuery.of(context).size.width - 40.0,
                 height: 50.0,
                 child: Center(
-                  child: Text("Confirm", style: TextStyle(color: Colors.white, fontSize: 15.0),),
+                  child: Text("Approve ads", style: TextStyle(color: Colors.white, fontSize: 15.0),),
                 ),),
             ),
           ),

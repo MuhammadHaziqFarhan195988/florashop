@@ -1,8 +1,8 @@
 import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:e_shop/Admin/adminShiftOrders.dart';
-import 'package:e_shop/Widgets/loadingWidget.dart';
-import 'package:e_shop/main.dart';
+import 'package:florashop/Admin/adminShiftOrders.dart';
+import 'package:florashop/Widgets/loadingWidget.dart';
+import 'package:florashop/main.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -39,7 +39,7 @@ class _UploadPageState extends State<UploadPage> with AutomaticKeepAliveClientMi
         flexibleSpace: Container(
           decoration: new BoxDecoration(
               gradient: new LinearGradient(
-                colors: [Colors.pink,Colors.lightGreenAccent],
+                colors: [Colors.lightGreen[900],Colors.lightGreenAccent],
                 begin: const FractionalOffset(0.0, 0.0),
                 end: const FractionalOffset(1.0, 0.0),
                 stops: [0.0 , 1.0],
@@ -73,7 +73,7 @@ class _UploadPageState extends State<UploadPage> with AutomaticKeepAliveClientMi
     return Container(
       decoration: new BoxDecoration(
           gradient: new LinearGradient(
-            colors: [Colors.pink,Colors.lightGreenAccent],
+            colors: [Colors.lightGreen[900],Colors.lightGreenAccent],
             begin: const FractionalOffset(0.0, 0.0),
             end: const FractionalOffset(1.0, 0.0),
             stops: [0.0 , 1.0],
@@ -89,7 +89,7 @@ class _UploadPageState extends State<UploadPage> with AutomaticKeepAliveClientMi
             child: RaisedButton(
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(9.0)),
               child: Text("Add new Item", style: TextStyle(fontSize: 20.0, color: Colors.white),),
-              color: Colors.green,
+              color: Colors.blue,
               onPressed: ()=> takeImage(context),
             ),)
           ],
@@ -149,7 +149,7 @@ class _UploadPageState extends State<UploadPage> with AutomaticKeepAliveClientMi
         flexibleSpace: Container(
           decoration: new BoxDecoration(
               gradient: new LinearGradient(
-                colors: [Colors.pink,Colors.lightGreenAccent],
+                colors: [Colors.lightGreen[900],Colors.lightGreenAccent],
                 begin: const FractionalOffset(0.0, 0.0),
                 end: const FractionalOffset(1.0, 0.0),
                 stops: [0.0 , 1.0],
@@ -275,7 +275,7 @@ class _UploadPageState extends State<UploadPage> with AutomaticKeepAliveClientMi
   }
 
   Future<String> uploadItemImage(mFileImage) async {
-    final StorageReference storageReference = FirebaseStorage.instance.ref().child("Items");
+    final StorageReference storageReference = FirebaseStorage.instance.ref().child("Items"); //ref
     StorageUploadTask uploadTask = storageReference.child("product_$productID.jpg").putFile(mFileImage);
     StorageTaskSnapshot taskSnapshot = await uploadTask.onComplete;
     String downloadUrl = await taskSnapshot.ref.getDownloadURL();

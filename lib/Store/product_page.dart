@@ -1,8 +1,8 @@
-import 'package:e_shop/Widgets/customAppBar.dart';
-import 'package:e_shop/Widgets/myDrawer.dart';
-import 'package:e_shop/Models/item.dart';
+import 'package:florashop/Widgets/customAppBar.dart';
+import 'package:florashop/Widgets/myDrawer.dart';
+import 'package:florashop/Models/item.dart';
 import 'package:flutter/material.dart';
-import 'package:e_shop/Store/storehome.dart';
+import 'package:florashop/Store/storehome.dart';
 
 
 class ProductPage extends StatefulWidget {
@@ -69,6 +69,34 @@ class _ProductPageState extends State<ProductPage> {
                           SizedBox(
                             height: 10.0,
                           ),
+                          Text(
+                            
+                           "My Phone Number: "+   widget.itemModel.phoneNo.toString(),
+                          ),
+                          SizedBox(
+                            height: 10.0,
+                          ),
+                          Text(
+
+                            "Optimum temperature: "+ widget.itemModel.temperature.toString(),
+                          ),
+                          SizedBox(
+                            height: 10.0,
+                          ),
+                          Text(
+                            "Fertilizer minerals: "+
+                            widget.itemModel.minerals,
+                          ),
+                          SizedBox(
+                            height: 10.0,
+                          ),
+                          Text(
+                            "Amount of Water required"+
+                            widget.itemModel.water.toString(),
+                          ),
+                          SizedBox(
+                            height: 10.0,
+                          ),
 
                           Text(
                           "RM " +  widget.itemModel.price.toString(),
@@ -88,7 +116,7 @@ class _ProductPageState extends State<ProductPage> {
                       child: Container(
                         decoration: new BoxDecoration(
                             gradient: new LinearGradient(
-                              colors: [Colors.pink,Colors.lightGreenAccent],
+                              colors: [Colors.lightGreen[900],Colors.lightGreenAccent],
                               begin: const FractionalOffset(0.0, 0.0),
                               end: const FractionalOffset(1.0, 0.0),
                               stops: [0.0 , 1.0],

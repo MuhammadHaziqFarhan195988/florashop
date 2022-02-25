@@ -1,14 +1,14 @@
 import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:e_shop/Widgets/customTextField.dart';
-import 'package:e_shop/DialogBox/errorDialog.dart';
-import 'package:e_shop/DialogBox/loadingDialog.dart';
+import 'package:florashop/Widgets/customTextField.dart';
+import 'package:florashop/DialogBox/errorDialog.dart';
+import 'package:florashop/DialogBox/loadingDialog.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import '../Store/storehome.dart';
-import 'package:e_shop/Config/config.dart';
+import 'package:florashop/Config/config.dart';
 
 
 
@@ -87,6 +87,7 @@ class _RegisterState extends State<Register>
             RaisedButton(onPressed: (){
               uploadAndSaveImage();
             },
+              color: Colors.blue,
               child: Text("Sign Up", style: TextStyle(color: Colors.white),
             ),
             ),
@@ -96,7 +97,7 @@ class _RegisterState extends State<Register>
             Container(
               height: 4.0,
               width: _screenWidth * 0.8,
-              color: Colors.pink,
+              color: Colors.blue,
             ),
             SizedBox(
               height: 15.0,

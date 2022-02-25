@@ -1,7 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:e_shop/Widgets/myDrawer.dart';
+import 'package:florashop/Store/storehome.dart';
+import 'package:florashop/Widgets/myDrawer.dart';
 import 'package:flutter/material.dart';
-import 'package:e_shop/Config/config.dart';
+import 'package:florashop/Config/config.dart';
 import 'package:flutter/services.dart';
 import '../Widgets/loadingWidget.dart';
 import '../Widgets/orderCard.dart';
@@ -23,7 +24,7 @@ class _MyOrdersState extends State<MyOrders> {
           flexibleSpace: Container(
             decoration: new BoxDecoration(
                 gradient: new LinearGradient(
-                  colors: [Colors.pink,Colors.lightGreenAccent],
+                  colors: [Colors.lightGreen[900],Colors.lightGreenAccent],
                   begin: const FractionalOffset(0.0, 0.0),
                   end: const FractionalOffset(1.0, 0.0),
                   stops: [0.0 , 1.0],
@@ -35,7 +36,8 @@ class _MyOrdersState extends State<MyOrders> {
           title: Text("my orders", style: TextStyle(color: Colors.white),),
           actions: [
             IconButton(icon: Icon(Icons.arrow_drop_down_circle),color: Colors.white, onPressed: (){
-              SystemNavigator.pop();
+              Route route = MaterialPageRoute(builder: (c) => StoreHome());
+              Navigator.pushReplacement(context, route);
             },),
           ],
         ),
