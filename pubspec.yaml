@@ -1,0 +1,67 @@
+name: florashop
+description: Flutter eCommerce App using Firebase Firestore from Coding Cafe
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.2 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.4
+  cloud_firestore: ^4.9.2
+  cloud_firestore_platform_interface: ^5.5.0
+  plugin_platform_interface: ^2.1.3
+  firebase_auth: ^4.10.0
+  shared_preferences: ^2.0.7
+  fluttertoast: ^8.0.3
+  image_picker: ^1.0.4
+  firebase_storage: ^11.2.7
+  flutter_staggered_grid_view: ^0.7.0
+  provider: ^6.0.2
+  path_provider: ^2.0.4
+  toast: ^0.3.0
+  image: ^4.0.17
+  timeline_tile: ^2.0.0
+  local_auth: ^2.1.7
+ 
+  google_fonts: ^6.1.0
+  flutter_svg: ^2.0.7
+  intl:
+  firebase_core: ^2.16.0
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+flutter:
+  uses-material-design: true
+  fonts:
+    - family: Signatra
+      fonts:
+        - asset: assets/fonts/Signatra.ttf
+    - family: Pacifico
+      fonts:
+        - asset: assets/fonts/Pacifico-Regular.ttf
+  assets:
+    - images/welcome.png
+    - images/login.png
+    - images/admin.png
+    - images/cash.png
+    - assets/icons/Camera Icon.svg
+    - assets/icons/User Icon.svg
+    - assets/icons/Bill Icon.svg
+    - assets/icons/pencil.svg
+    - assets/icons/Log out.svg
+    - assets/delivery/order_placed.png
+    - assets/delivery/order_confirmed.png
+    - assets/delivery/order_processed.png
+    - assets/delivery/ready_to_pickup.png
+    - assets/icons/Location point.svg
+
+
+
